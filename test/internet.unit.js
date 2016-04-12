@@ -89,4 +89,11 @@ describe("internet.js", function () {
             assert.ok(color.match(/^#[a-f0-9]{6}$/));
         });
     });
+    
+    describe("mac()", function() {
+        it("returns a random mac address", function() {
+            var mac = faker.Internet.mac();
+            assert.ok(mac.match(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/));
+        });
+    });
 });
